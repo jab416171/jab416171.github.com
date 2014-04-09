@@ -1,11 +1,11 @@
 <h2>Purchased Stock</h2>
-<label for="numberofshares">Number of Shares</label><input type="text" id="numberofshares" />
+<label for="numberofshares">Number of Shares</label><input type="text" id="numberofshares" onKeyUp="calculate();" />
 <br />
-<label for="pricepershare">Price per share</label><input type="text" id="pricepershare" />
+<label for="pricepershare">Price per share</label><input type="text" id="pricepershare" onKeyUp="calculate();" />
 <br />
-<label for="buyfee">Purchase transaction fee</label><input type="text" id="buyfee" />
+<label for="buyfee">Purchase transaction fee</label><input type="text" id="buyfee" onKeyUp="calculate();" />
 <br />
-<label for="sellfee">Sell transaction fee</label><input type="text" id="sellfee" />
+<label for="sellfee">Sell transaction fee</label><input type="text" id="sellfee" onKeyUp="calculate();" />
 <br />
 <label for="minprofit">Minimum profit</label><input type="text" id="minprofit" onKeyUp="calculate();" />
 <br />
@@ -21,7 +21,9 @@
 			pricePaid=((pricepershare * numberofshares) + (buyfee + sellfee));
 			minprofitpershare=(minprofit / numberofshares);
 			result=(pricePaid / numberofshares) + minprofitpershare;
-			document.getElementById('profit').innerHTML="Profit: " + result;
+			if(!isNaN(result)) {
+				document.getElementById('profit').innerHTML="Profit: " + result;
+			}
 
 	}
 </script>
