@@ -9,7 +9,7 @@
 <br />
 <label for="minprofit">Minimum profit</label><input type="text" id="minprofit" onKeyUp="calculate();" />
 <br />
-<span id="profit">Profit: </span>
+<span id="profit">Sell at: </span>
 
 <script type="text/javascript">
 	function calculate() {
@@ -22,7 +22,7 @@
 			minprofitpershare=(minprofit / numberofshares);
 			result=(pricePaid / numberofshares) + minprofitpershare;
 			if(!isNaN(result)) {
-				document.getElementById('profit').innerHTML="Profit: " + result;
+				document.getElementById('profit').innerHTML="Sell at: " + result;
 			}
 
 	}
